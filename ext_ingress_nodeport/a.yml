@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.allow-http: "false"
+    kubernetes.io/ingress.global-static-ip-name: deveff-karma-know
+  name: karma-know-ilb-service-ingress
+  namespace: ck-service
+spec:
+  tls:
+  - hosts:
+      - theknow-gke.dev.corp.creditkarma.com
+    secretName: theknow-gke-self-singed-dont-use
+  backend:
+    serviceName: karma-know-ilb-service-manual
+    servicePort: 8001

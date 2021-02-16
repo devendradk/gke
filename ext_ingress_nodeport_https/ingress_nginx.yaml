@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: my-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: "gke-global-lb-ext-ip"
+spec:
+  tls:
+  - hosts:
+      - a.devendra.com
+    secretName: a-devendra-com
+  - hosts:
+      - b.devendra.com
+    secretName: b-devendra-com
+  rules:
+  - host: a.devendra.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: nginx-nodeport-a
+          servicePort: 80
+  - host: b.devendra.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: nginx-nodeport-b
+          servicePort: 80
