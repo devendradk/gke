@@ -1,0 +1,38 @@
+##### backend
+#service-name
+#cloudarmor-name
+#iap-name
+
+##### deployment
+#service-name
+#replica-count
+#labels
+#container-info
+
+##### ingress
+#service-name
+#domain-name
+#service-port
+
+##### service
+#service-name
+#labels
+#service-ports
+#service-type
+
+serviceName: nginx
+cloudarmorName: only-trusted
+iapName: devendra-oauth-iap
+labels: 
+  app: nginx 
+  env: prod
+servicePorts: 
+  port: 80
+  name: web
+serviceType: NodePort
+containerImage: praqma/network-multitool
+containerPort1: 80
+containerPort2: 443
+replicaCount: 2
+domain: a.devendra.com
+staticIP: gke-global-lb-ext-ip

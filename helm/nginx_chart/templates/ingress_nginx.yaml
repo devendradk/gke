@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: {{ .Values.serviceName }}
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: {{ .Values.staticIP }}
+spec:
+  tls:
+  - hosts:
+      - {{ .Values.domain }}
+    secretName: {{ .Values.domain | replace "." "-" }}
+  backend:
+   serviceName: {{ .Values.serviceName }}
+   servicePort: {{ .Values.servicePorts.port }}
