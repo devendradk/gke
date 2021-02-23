@@ -3,7 +3,7 @@ entries:
   mychart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-02-23T09:15:39.870986-08:00"
+    created: "2021-02-23T12:33:56.721843-08:00"
     description: A Helm chart for Kubernetes
     digest: a382ef504ec92f66b991d85bbb2988e7f3deaab6c81db87ba6b99482b2b7e483
     name: mychart
@@ -14,7 +14,17 @@ entries:
   nginx_chart:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-02-23T09:15:39.871943-08:00"
+    created: "2021-02-23T12:33:56.723442-08:00"
+    description: Nginx with 3 replicas.
+    digest: db3549c6c261d5ce11e54af4e69b3d2d535d17c58e8c7467049e02e299745ecd
+    name: nginx_chart
+    type: application
+    urls:
+    - nginx_chart-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2021-02-23T12:33:56.722806-08:00"
     description: A Helm chart for Kubernetes
     digest: bacff4e3f91dda1c50559dd0c67f6f0344d61084efb8700810598bc1e9ae6149
     name: nginx_chart
@@ -22,4 +32,4 @@ entries:
     urls:
     - nginx_chart-0.1.0.tgz
     version: 0.1.0
-generated: "2021-02-23T09:15:39.870152-08:00"
+generated: "2021-02-23T12:33:56.718553-08:00"
